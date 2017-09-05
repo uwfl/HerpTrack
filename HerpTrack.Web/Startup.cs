@@ -7,6 +7,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using HerpTrack.Repo;
+using HerpTrack.Repo.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using HerpTrack.Service.Interfaces;
+using HerpTrack.Service.Services;
+using HerpTrack.Repo.Repositories;
 
 namespace HerpTrack_Web
 {
@@ -23,6 +29,11 @@ namespace HerpTrack_Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddDbContext<HerpTrackContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IUserProfileService, UserProfileService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

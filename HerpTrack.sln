@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerpTrack.Web", "HerpTrack.Web\HerpTrack.Web.csproj", "{25A59BB1-62FF-487B-8171-19BA98C9896C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HerpTrack.Web", "HerpTrack.Web\HerpTrack.Web.csproj", "{25A59BB1-62FF-487B-8171-19BA98C9896C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HerpTrack.Data", "HerpTrack.Data\HerpTrack.Data.csproj", "{A8EC9F71-AE24-44B9-B7F5-0C6BFF699180}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HerpTrack.Service", "HerpTrack.Service\HerpTrack.Service.csproj", "{C01EB370-7A59-4219-8961-93CA413DEF1D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HerpTrack.Repo", "HerpTrack.Repo\HerpTrack.Repo.csproj", "{FCCE162F-8894-4144-B6BF-90E3F6BFFCAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{25A59BB1-62FF-487B-8171-19BA98C9896C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25A59BB1-62FF-487B-8171-19BA98C9896C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25A59BB1-62FF-487B-8171-19BA98C9896C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8EC9F71-AE24-44B9-B7F5-0C6BFF699180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8EC9F71-AE24-44B9-B7F5-0C6BFF699180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8EC9F71-AE24-44B9-B7F5-0C6BFF699180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8EC9F71-AE24-44B9-B7F5-0C6BFF699180}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C01EB370-7A59-4219-8961-93CA413DEF1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C01EB370-7A59-4219-8961-93CA413DEF1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C01EB370-7A59-4219-8961-93CA413DEF1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C01EB370-7A59-4219-8961-93CA413DEF1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCCE162F-8894-4144-B6BF-90E3F6BFFCAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCCE162F-8894-4144-B6BF-90E3F6BFFCAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCCE162F-8894-4144-B6BF-90E3F6BFFCAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCCE162F-8894-4144-B6BF-90E3F6BFFCAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
