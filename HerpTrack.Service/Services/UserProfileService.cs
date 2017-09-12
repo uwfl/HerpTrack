@@ -20,5 +20,10 @@ namespace HerpTrack.Service.Services
         {
             return userProfileRepository.Get(id);
         }
+
+        public IEnumerable<UserProfile> GetUserProfiles()
+        {
+            return userProfileRepository.GetAll();
+        }
     }
 }

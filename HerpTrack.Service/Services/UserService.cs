@@ -9,10 +9,10 @@ namespace HerpTrack.Service.Services
 {
     public class UserService : IUserService
     {
-        private IRepository<User> userRepository;
+        private IAuthRepository<User> userRepository;
         private IRepository<UserProfile> userProfileRepository;
 
-        public UserService(IRepository<User> userRepository, IRepository<UserProfile> userProfileRepository)
+        public UserService(IAuthRepository<User> userRepository, IRepository<UserProfile> userProfileRepository)
         {
             this.userRepository = userRepository;
             this.userProfileRepository = userProfileRepository;

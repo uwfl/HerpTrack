@@ -12,4 +12,8 @@
     <ProjectReference Include="..\HerpTrack.Data\HerpTrack.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Initializer\" />
+  </ItemGroup>
+
 </Project>

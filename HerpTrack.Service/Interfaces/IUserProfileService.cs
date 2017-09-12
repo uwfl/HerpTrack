@@ -8,5 +8,6 @@ namespace HerpTrack.Service.Interfaces
     public interface IUserProfileService
     {
         UserProfile GetUserProfile(long id);
+        IEnumerable<UserProfile> GetUserProfiles();
     }
 }

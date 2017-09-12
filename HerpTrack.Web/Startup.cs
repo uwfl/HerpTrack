@@ -13,6 +13,8 @@ using Microsoft.EntityFrameworkCore;
 using HerpTrack.Service.Interfaces;
 using HerpTrack.Service.Services;
 using HerpTrack.Repo.Repositories;
+using HerpTrack.Data.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace HerpTrack_Web
 {
@@ -30,10 +32,14 @@ namespace HerpTrack_Web
         {
             services.AddMvc();
 
-            services.AddDbContext<HerpTrackContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<HerpTrackContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("HerpTrack.Web")));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IUserProfileService, UserProfileService>();
+
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<HerpTrackContext>()
+                .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +53,12 @@ namespace HerpTrack_Web
                     HotModuleReplacement = true,
                     ReactHotModuleReplacement = true
                 });
+
+                using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+                {
+                    serviceScope.ServiceProvider.GetService<HerpTrackContext>().Database.Migrate();
+                    serviceScope.ServiceProvider.GetService<HerpTrackContext>().EnsureSeedData();
+                }
             }
             else
             {
@@ -54,6 +66,7 @@ namespace HerpTrack_Web
             }
 
             app.UseStaticFiles();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
